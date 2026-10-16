@@ -1,9 +1,9 @@
 # ImmunoWES: An Integrated Pipeline for Somatic Mutation and HLA Analysis in Precision Oncology 
 
 ## Overview
-This repository provides a comprehensive analysis workflow that integrates whole-exome sequencing (WES) data with HLA genotyping information. The aim is to explore how somatic mutations interact with the human leukocyte antigen (HLA) system to influence immune-mediated disease progression and clinical outcomes.
+This repository provides an analysis workflow that integrates whole-exome sequencing (WES) data with HLA genotyping information. The aim is to explore how somatic mutations and the human leukocyte antigen (HLA) system can be jointly characterized in the context of immune-related disease.
 
-Unlike traditional WES analyses that focus solely on mutation detection, our pipeline adds immunogenetic context by incorporating HLA class I and II alleles, mutation–HLA binding affinity prediction, HLA evolutionary divergence (HED) scoring, and survival analysis.
+Unlike traditional WES analyses that focus solely on mutation detection, our pipeline adds immunogenetic context by incorporating HLA class I and II alleles, mutation–HLA binding affinity prediction, HLA evolutionary divergence (HED) scoring, and exploratory survival analysis.
 
 **Note: File paths in scripts are environment-specific. Please modify them according to your local server configuration.**
 
@@ -37,18 +37,18 @@ Calculates tumor mutation burden (TMB).
 Performs GO and KEGG pathway enrichment based on mutated genes.
 
 ### 5. /scripts/cox/
-Integrates mutation immunogenicity scores, binding affinities, and HED.
+Integrates mutation immunogenicity scores, binding affinities, and HED for exploratory survival analysis (Kaplan–Meier / Cox). Results from this module are descriptive and hypothesis-generating; they are not intended as evidence of prognostic value.
 
 ## Dataset
 Project Accession: [SRP043661](https://www.ncbi.nlm.nih.gov/sra/?term=SRP043661)
 
 
 ## Abstract
-Whole-exome sequencing (WES), owing to its efficiency in identifying mutations within protein-coding regions, has emerged as a powerful tool for elucidating the molecular mechanisms underlying immune-mediated diseases and related conditions. Nevertheless, most current studies primarily focus on the mutation profiling of WES data, often neglecting the potential influence of the human leukocyte antigen (HLA) system—a central component of immune regulation. The interaction between somatic mutations and HLA genotypes remains insufficiently characterized, limiting our understanding of immune-driven disease processes and clinical outcomes.
+Whole-exome sequencing (WES), owing to its efficiency in identifying mutations within protein-coding regions, has emerged as a powerful tool for elucidating the molecular mechanisms underlying immune-mediated diseases and related conditions. Nevertheless, most current studies primarily focus on the mutation profiling of WES data, often neglecting the HLA system, a central component of immune regulation. The interaction between somatic mutations and HLA genotypes remains insufficiently characterized.
 
-To refine this understanding, we propose a comprehensive integrative analytical framework that combines WES data with high-resolution HLA typing derived from raw FASTQ sequences. This pipeline includes upstream WES processing, somatic mutation detection, HLA genotyping, prediction of mutation–HLA binding affinity, assessment of HLA evolutionary divergence, and correlation with clinical prognosis. Kaplan–Meier survival analysis demonstrates that incorporating mutation–HLA binding affinity provides additional insights into immune-mediated disease progression and prognostic evaluation.
+To address this, we provide an integrative analytical framework that combines WES data with high-resolution HLA typing derived from raw FASTQ sequences. The pipeline includes upstream WES processing, somatic mutation detection, HLA genotyping, prediction of mutation–HLA binding affinity, assessment of HLA evolutionary divergence, and exploratory association analysis with clinical outcome data.
 
-We anticipate that this framework will support researchers in identifying immune-related mutations that are potentially associated with immune-mediated disease outcomes.
+We anticipate that this framework will help researchers characterize immune-related mutations in WES cohorts and generate hypotheses for further validation.
 
 ## Dependencies
 The pipeline requires the following software versions:
